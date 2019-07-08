@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="2" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="Firefox"/>
+  <listeners>
+    <listener class-name="com.indianmoney.test.Listener"/>
+  </listeners>
+  <test name="Chrome(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="com.indianmoney.test.Healthtest">
         <methods>
+          <include name="preCondition"/>
+          <include name="preCondition"/>
+          <include name="healthdetail"/>
+          <include name="postConditon"/>
+        </methods>
+      </class> <!-- com.indianmoney.test.Healthtest -->
+      <class name="com.indianmoney.test.Termtest">
+        <methods>
+          <include name="termdetail"/>
+        </methods>
+      </class> <!-- com.indianmoney.test.Termtest -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
+  <test name="Firefox(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="com.indianmoney.test.Healthtest">
+        <methods>
+          <include name="preCondition"/>
           <include name="preCondition"/>
           <include name="healthdetail"/>
           <include name="postConditon"/>
         </methods>
       </class> <!-- com.indianmoney.test.Healthtest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Firefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->

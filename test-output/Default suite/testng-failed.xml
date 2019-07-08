@@ -5,9 +5,7 @@
     <classes>
       <class name="com.indianmoney.test.Healthtest">
         <methods>
-          <include name="preCondition"/>
           <include name="healthdetail"/>
-          <include name="postConditon"/>
         </methods>
       </class> <!-- com.indianmoney.test.Healthtest -->
     </classes>
